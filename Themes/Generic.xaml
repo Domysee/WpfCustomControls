@@ -6,7 +6,6 @@
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/PlaceableScrollbarScrollViewer.xaml" />
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/WatermarkTextBox.xaml" />
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProgressBarTextBox.xaml" />
-        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProcessTabControl.xaml" />
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProcessTabItem.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
