@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/PlaceableScrollbarListView.xaml" />
+        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/PlaceableScrollbarScrollViewer.xaml" />
+        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/WatermarkTextBox.xaml" />
+        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProgressBarTextBox.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
