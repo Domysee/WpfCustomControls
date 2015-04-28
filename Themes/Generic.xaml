@@ -7,5 +7,6 @@
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/WatermarkTextBox.xaml" />
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProgressBarTextBox.xaml" />
         <ResourceDictionary Source="/CustomControlLibrary;component/Themes/ProcessTabItem.xaml" />
+        <ResourceDictionary Source="/CustomControlLibrary;component/Themes/RippleEffectDecorator.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
