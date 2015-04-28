@@ -76,11 +76,16 @@ namespace CustomControlLibrary
 
 			this.AddHandler(MouseDownEvent, new RoutedEventHandler((sender, e) =>
 			{
+				var targetWidth = Math.Max(ActualWidth, ActualHeight) * 2;
 				var mousePosition = (e as MouseButtonEventArgs).GetPosition(this);
-				ellipse.Margin = new Thickness(mousePosition.X, mousePosition.Y, 0, 0);
-				(animation.Children[0] as DoubleAnimation).To = ActualWidth * 2;
-				(animation.Children[1] as ThicknessAnimation).From = new Thickness(mousePosition.X, mousePosition.Y, 0, 0);
-				(animation.Children[1] as ThicknessAnimation).To = new Thickness(mousePosition.X - ActualWidth * 2 / 2, mousePosition.Y - ActualWidth * 2 / 2, 0, 0);
+				var startMargin = new Thickness(mousePosition.X, mousePosition.Y, 0, 0);
+				//set initial margin to mouse position
+				ellipse.Margin = startMargin;
+				//set the to value of the animation that animates the width to the target width
+				(animation.Children[0] as DoubleAnimation).To = targetWidth;
+				//set the to and from values of the animation that animates the distance relative to the container (grid)
+				(animation.Children[1] as ThicknessAnimation).From = startMargin;
+				(animation.Children[1] as ThicknessAnimation).To = new Thickness(mousePosition.X - targetWidth / 2, mousePosition.Y - targetWidth / 2, 0, 0);
 				ellipse.BeginStoryboard(animation);
 			}), true);
 		}
