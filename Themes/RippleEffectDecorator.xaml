@@ -5,29 +5,27 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type l:RippleEffectDecorator}">
-                    <Border x:Name="PART_border" Background="{TemplateBinding Background}">
-                        <Grid x:Name="PART_grid" ClipToBounds="True" 
+                    <Grid x:Name="PART_grid" ClipToBounds="True" Background="{TemplateBinding Background}"
                                Width="{Binding ElementName=PART_contentpresenter, Path=ActualWidth}"
                                Height="{Binding ElementName=PART_contentpresenter, Path=ActualHeight}">
-                            <Ellipse x:Name="PART_ellipse"
+                        <Ellipse x:Name="PART_ellipse"
                                          Fill="{Binding Path=HighlightBackground, RelativeSource={RelativeSource TemplatedParent}}" 
                                          Width="0" Height="{Binding Path=Width, RelativeSource={RelativeSource Self}}" 
                                          HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-                            <ContentPresenter x:Name="PART_contentpresenter" />
+                        <ContentPresenter x:Name="PART_contentpresenter" />
 
-                            <Grid.Resources>
-                                <Storyboard x:Key="PART_animation" Storyboard.TargetName="PART_ellipse">
-                                    <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="{Binding Path=ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:1" />
-                                    <ThicknessAnimation Storyboard.TargetProperty="Margin" />
-                                    <DoubleAnimation BeginTime="0:0:1" Duration="0:0:0.25" Storyboard.TargetProperty="Opacity"
+                        <Grid.Resources>
+                            <Storyboard x:Key="PART_animation" Storyboard.TargetName="PART_ellipse">
+                                <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="{Binding Path=ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:1" />
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin" />
+                                <DoubleAnimation BeginTime="0:0:1" Duration="0:0:0.25" Storyboard.TargetProperty="Opacity"
                                                 From="1" To="0" />
-                                    <DoubleAnimation Storyboard.TargetProperty="Width" To="0" BeginTime="0:0:1.25" Duration="0:0:0" />
-                                    <DoubleAnimation BeginTime="0:0:1.25" Duration="0:0:0" Storyboard.TargetProperty="Opacity" To="1" />
-                                </Storyboard>
-                            </Grid.Resources>
-                        </Grid>
-                    </Border>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="0" BeginTime="0:0:1.25" Duration="0:0:0" />
+                                <DoubleAnimation BeginTime="0:0:1.25" Duration="0:0:0" Storyboard.TargetProperty="Opacity" To="1" />
+                            </Storyboard>
+                        </Grid.Resources>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
